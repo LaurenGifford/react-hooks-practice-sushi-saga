@@ -13,7 +13,7 @@ function Sushi({sushi, onSushiClick}) {
     <div className="sushi">
       <div className="plate" onClick={() => eatSushi()}>
         {/* Tell me if this sushi has been eaten! */}
-        {false ? null : (
+        {eaten ? null : (
           <img
             src={img_url}
             alt={name}
