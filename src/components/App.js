@@ -20,14 +20,14 @@ function App() {
   
   function handleEatSushi(clickedSushi) {
     console.log(clickedSushi.id, sushiIndex)
-    const notEaten = sushis.filter(sushi => sushi.id !== clickedSushi.id)
-    setSushis([...notEaten])
+    // const notEaten = sushis.filter(sushi => sushi.id !== clickedSushi.id)
+    // setSushis([...notEaten])
     setEatenSushis([...eatenSushis, clickedSushi.id])
     setWallet(wallet - clickedSushi.price)
   }
 
   function getMoreSushis() {
-    sushiIndex > 99 ? setSushiIndex(0) : setSushiIndex(sushiIndex + 4)
+    sushiIndex > 96 ? setSushiIndex(0) : setSushiIndex(sushiIndex + 4)
   }
 
   function handleAddMoney(moreMoney) {
@@ -39,14 +39,20 @@ function App() {
     <div className="app">
       {wallet > 0 ? 
       <SushiContainer 
-      sushis={sushis}
-      eatenSushis={eatenSushis}
-      onSushiClick={handleEatSushi}
-      onMoreSushisClick={getMoreSushis}
+        sushis={sushis}
+        eatenSushis={eatenSushis}
+        onSushiClick={handleEatSushi}
+        onMoreSushisClick={getMoreSushis}
       /> : null }
-      <button onClick={() => setShowForm(!showForm)}>More Sushi Money!</button>
+      <button 
+        onClick={() => setShowForm(!showForm)}>
+          More Sushi Money!
+      </button>
       {showForm ? <MoneyForm onAddMoney={handleAddMoney} /> : null}
-      <Table plates={eatenSushis} wallet={wallet}/>
+      <Table 
+        plates={eatenSushis} 
+        wallet={wallet}
+      />
     </div>
   );
 }

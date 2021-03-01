@@ -12,12 +12,12 @@ function MoneyForm({onAddMoney}) {
         <form onSubmit={(e) => moneyMoney(e)}>
             <label>Enter amount to add to wallet!</label>
             <input 
-            onChange={(e) => setMoney(e.target.value)}
-            type="number"
-            min={0}
-            max={100}
-            value={money}>
-            </input>
+                onChange={(e) => setMoney(e.target.value)}
+                type="number"
+                min={0}
+                max={100}
+                value={money}
+            />
             <input type="submit" value="Add!"></input>
         </form>
     )

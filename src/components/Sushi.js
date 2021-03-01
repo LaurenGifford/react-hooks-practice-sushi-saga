@@ -5,8 +5,10 @@ function Sushi({sushi, onSushiClick}) {
   const [eaten, setEaten] = useState(false)
 
   function eatSushi() {
+    if (!eaten) {
     onSushiClick(sushi)
     setEaten(true)
+    }
   }
 
   return (
@@ -14,7 +16,7 @@ function Sushi({sushi, onSushiClick}) {
       <div className="plate" onClick={() => eatSushi()}>
         {/* Tell me if this sushi has been eaten! */}
         {eaten ? null : (
-          <img
+          <img 
             src={img_url}
             alt={name}
             width="100%"

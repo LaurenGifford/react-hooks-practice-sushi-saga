@@ -5,12 +5,13 @@ import Sushi from "./Sushi"
 function SushiContainer({sushis, eatenSushis, onSushiClick, onMoreSushisClick}) {
 
   const renderSushis = sushis.map(sushi => (
-    !eatenSushis.includes(sushi.id) ?
+    // !eatenSushis.includes(sushi.id) ?
     <Sushi 
       sushi={sushi}
       key={sushi.id}
       onSushiClick={onSushiClick}
-    /> : null
+    /> 
+    // : null
   ))
   return (
     <div className="belt">
